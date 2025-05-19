@@ -1,0 +1,233 @@
+ inicio de sesion realizado por el cuel esInversor
+ inicio de sesion realizado por Sergiel cuel esGestor
+ inicio de sesion realizado por Marcosel cuel esInversor
+ inicio de sesion realizado por Andresel cuel esAdministrador
+ inicio de sesion realizado por Sergiel cuel esGestor
+ inicio de sesion realizado por Sergi el cuel es Gestor
+ la fecha inicio de sesion fue 2025-04-20T20:39:34.654300300
+ inicio de sesion realizado por Andres el cuel es Administrador
+ la fecha inicio de sesion fue 2025-04-20T20:44:34.125491700 Se produjo un sierre de secion 
+ la fecha en la que se serro la sesion fue 2025-04-20T20:44:36.599408300
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-20T21:06:06.835378800
+ Se ha creado un proyecto el cual es El nombre del proyecto es hola, su descripción es prueba. Pertenece a la categoría Arte. Se necesita una cantidad de 1000.0 y hasta ahora se ha financiado 12. La fecha de apertura fue 2000-01-01 y la fecha de finalización es 2000-01-01. Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-04-20T21:06:35.409127100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-20T21:16:21.141653900
+ Se ha eliminadao un proyecto donde su id era 1 Este proyecto lo elimino el usuario Sergi
+
+ la fecha en la que se serro la sesion fue 2025-04-20T21:16:28.321883600
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-20T21:32:32.982156800
+ inicio de sesion realizado por Sergi el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-20T22:20:39.895076
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-20T22:25:32.533217
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-20T22:28:00.878132
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da, su descripción es da. Pertenece a la categoría Arte. Se necesita una cantidad de 100.0 y hasta ahora se ha financiado 1. La fecha de apertura fue 2000-10-01 y la fecha de finalización es 2000-10-01. Las recompensas ofrecidas son de [], cantidadInvertida=1000.0, fechaDeInversion=2000-01-01, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-04-20T22:28:16.468652600
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-04-21T18:00:11.441059100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-21T19:32:39.307009500
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-21T23:21:40.706572100
+ inicio de sesion realizado por jaime el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-21T23:55:19.028680200
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:22:55.494678600
+ Se ha creado un proyecto el cual es El nombre del proyecto es hola
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 1234.0
+ hasta ahora se ha financiado 2000
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-04-22T00:23:33.157963300
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:31:38.460169100
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:32:49.263428100
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:33:29.116156900
+ Se ha creado un proyecto el cual es El nombre del proyecto es hola
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 1000.0
+ hasta ahora se ha financiado 200
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [] el cual fue creador por javier
+
+ la fecha en la que se creo el proyecto fue 2025-04-22T00:33:57.907889500
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:40:47.169237400
+ Se ha creado un proyecto el cual es El nombre del proyecto es hola
+ su descripción es ha
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 1000.0
+ hasta ahora se ha financiado 11
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [] el cual fue creador por javier
+
+ la fecha en la que se creo el proyecto fue 2025-04-22T00:41:15.198877100
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:43:32.525240200
+ Se ha creado un proyecto el cual es El nombre del proyecto es hola
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [] el cual fue creador por javier
+
+ la fecha en la que se creo el proyecto fue 2025-04-22T00:43:53.856024200
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:46:06.206331500
+ Se ha creado un proyecto el cual es El nombre del proyecto es hola
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [] el cual fue creador por javier
+
+ la fecha en la que se creo el proyecto fue 2025-04-22T00:46:33.887261100
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:48:21.637681100
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-04-22T00:53:14.050445500
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-04-22T00:54:25.673021
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T00:57:33.058459
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T01:19:35.140378900
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T03:17:33.325343100
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T03:18:46.868281900
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es pepe
+ su descripción es pepe
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 1000.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-01-01
+ la fecha de finalización es 2000-01-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=1000.0, fechaDeInversion=2000-01-01, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-04-22T03:19:18.423540300
+ inicio de sesion realizado por javier el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T10:31:44.241776800
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T10:32:59.082873300
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=10.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-04-22T10:33:14.238947700
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-04-22T10:34:13.366824600
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T10:35:34.278731600
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-04-22T10:36:35.767252
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T10:38:37.619186800
+ cambio de nombre realizado por Sergi
+
+ el id del proyecto que fue modificado es 333 el nombre por el cual fue cambiado es paquitoNuevo
+
+ la fecha de la modificacion es 2025-04-22T10:38:58.252989600
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T10:39:33.429492700
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T10:43:41.796661500
+ cambio de nombre realizado por Sergi
+
+ el id del proyecto que fue modificado es 333 el nombre por el cual fue cambiado es Antonio
+
+ la fecha de la modificacion es 2025-04-22T10:43:55.885772
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-04-22T10:44:21.959199700
+ inicio de sesion realizado por Sergi el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T10:47:02.688697200
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T10:48:52.480452600
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=17.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-04-22T10:49:08.747697400
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-04-22T10:49:14.095477900
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T10:49:35.602627800
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-04-22T10:52:41.815765900
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=17.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-04-22T10:52:58.776670
