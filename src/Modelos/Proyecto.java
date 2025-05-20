@@ -1,13 +1,11 @@
 package Modelos;
 
 import Inversión.Inversion;
-import MoldelosGestores.GestorDeProyecto;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Proyecto implements Inversible , Serializable {
+public class Proyecto implements Serializable {
     private String id;
     private String nombre;
     private String descripcion;
@@ -63,9 +61,7 @@ public class Proyecto implements Inversible , Serializable {
     public int getCantidadNecesaria(){
         return (int) cantidadNecesaria;
     }
-    public String getIdPorProyecto(){
-        return id;
-    }
+
 
     public void setFechaDeApertura(LocalDate fechaDeApertura) {
         this.fechaDeApertura = fechaDeApertura;
@@ -81,10 +77,6 @@ public class Proyecto implements Inversible , Serializable {
 
     public ArrayList<RecompensasDeProyecto> verArrayDeProyecto(){
         return recompensas;
-    }
-
-    public Inversion verUltimaInversion(){
-       return invercionesRealizadas.get(invercionesRealizadas.size());
     }
 
     public void modificarRecompensa(RecompensasDeProyecto nuevaRecompensa, String idRecompensa){
@@ -103,30 +95,8 @@ public class Proyecto implements Inversible , Serializable {
         return nombre;
     }
 
-    public Inversion verInversion(int inversionIndividual){
-        for (int i = 0; i <invercionesRealizadas.size() ; i++) {
-            return invercionesRealizadas.get(i);
-        }
-        return null;
-    }
-
     public ArrayList<Inversion> getInvercionesRealizadas() {
         return invercionesRealizadas;
-    }
-
-    public int cantidadDeInversores(){
-        return invercionesRealizadas.size();
-    }
-
-
-    @Override
-    public void aumentarInversion(int candtidadAumentada) {
-        setCantidadNecesaria(candtidadAumentada);
-    }
-
-    @Override
-    public void disminuirInversion(int cantidadDisminuida) {
-    setCantidadNecesaria(cantidadDisminuida);
     }
 
     public int getCantidadFinanciada() {
@@ -135,10 +105,6 @@ public class Proyecto implements Inversible , Serializable {
 
     public LocalDate getFechaDeApertura() {
         return fechaDeApertura;
-    }
-
-    public void añadirInversionEnProyecto(Inversion inversion){
-        invercionesRealizadas.add(inversion);
     }
 
     @Override

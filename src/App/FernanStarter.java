@@ -10,7 +10,6 @@ import Vistas.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.Scanner;
 
 import static FuncionesMenus.Menus.*;
@@ -20,18 +19,16 @@ public class FernanStarter implements Serializable {
 
         Scanner S = new Scanner(System.in);
         /*Usuarios por defecto*/
-        Administrador administradorPorDefecto = new Administrador("Andres", "davidgalan001@gmail.com", "1234");
-        Gestor gestorPorDefecto = new Gestor("Sergi", "davidgalan001@gmail.com", "1234");
-        Inversor inversorPorDefecto = new Inversor("Marcos", "davidgalan001@gmail.com", "1234");
-        Inversor inversorPorDefecto1 = new Inversor("Andresito", "davidgalan001@gmail.com", "1234");
+        Administrador administradorPorDefecto = new Administrador("Andres", "andrevelezg42@gmail.com", "1234");
+        Gestor gestorPorDefecto = new Gestor("Sergi", "andrevelezg42@gmail.com", "1234");
+        Inversor inversorPorDefecto = new Inversor("Marcos", "andrevelezg42@gmail.com", "1234");
+        Inversor inversorPorDefecto1 = new Inversor("Andresito", "andrevelezg42@gmail.com", "1234");
 
         /*Preferencias*/
         Preferencias preps = new Preferencias();
         /*Proyecto por defecto*/
 
         Proyecto proyectoPrueba = new Proyecto("da", "da", Categoria.Arte, 100, 1, LocalDate.of(2000, 10, 1), LocalDate.of(2000, 10, 1), "1");
-
-
 
 
         /*Bufer para escribir el los registros del programa*/
@@ -259,7 +256,7 @@ public class FernanStarter implements Serializable {
                                             int recompensaDePoryecto = Integer.parseInt(S.next());
                                             System.out.println("Escribe el id del proyecto al cual quieres agregar la recompensa");
                                             String idDeProyecto = S.next();
-                                            controladorDeProyecto.añadirRecompensaAProyecto(idDeProyecto, descripcionDeProyecto, recompensaDePoryecto, idDeProyecto);
+                                            controladorDeProyecto.añadirRecompensaAProyecto(descripcionDeProyecto, recompensaDePoryecto, idDeProyecto);
                                             break;
 
                                         case 8:

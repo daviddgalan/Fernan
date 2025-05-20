@@ -63,27 +63,9 @@ public class ControladorGestor  implements Serializable {
         vistaGestor.mostrarGraficoBarras(gestorDeProyecto.contarGraficoBarras(gestorDeProyecto.buscarProyecto(idProyecto)));
     }
 
-    public Proyecto BuscarProyecto(String idProyecto,String nombreDeUsuario){
-        if(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto)==null){
-            vistaGestor.mensajeProyectoNoEncontrado();
-            return null;
-        }
-        vistaGestor.mensajeDeProyectoBuscado();
-        return gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).buscarProyectosDeGestor(idProyecto);
-    }
     public void modificarnNombreDeProyecto(String idProyecto,String nuevoNobreDeProyecto){
         gestorDeProyecto.buscarProyecto(idProyecto).setNombre(nuevoNobreDeProyecto);
         vistaGestor.mensajeDeCambioDeNombre();
-    }
-
-    public void modificarCategoriaDeProyecto(Categoria nuevaCategoria , String nombreDeUsuario){
-        gestorDeProyecto.buscarProyecto(nombreDeUsuario).setCategoria(nuevaCategoria);
-        vistaGestor.mensajeDeCambioDeCambioCategoria();
-    }
-
-    public void modificarCantidadNecesaria(int cantidadNecesaria, String nombreDeUsuario) {
-        gestorDeProyecto.buscarProyecto(nombreDeUsuario).setCantidadNecesaria(cantidadNecesaria);
-        vistaGestor.mensajeCantidadNecesaria();
     }
 
     public void modificarCantidadFinanciada(int cantidadFinanciada, String nombreDeUsuario) {
@@ -101,24 +83,13 @@ public class ControladorGestor  implements Serializable {
         vistaGestor.mensajeCambioDeCambioDeCategoria();
     }
 
-    public void modificarRecompensas(String idDeProyecto, RecompensasDeProyecto NuevarecompensasDeProyecto, String idRecompesa) {
-        gestorDeProyecto.buscarProyecto(idDeProyecto).modificarRecompensa(NuevarecompensasDeProyecto,idRecompesa);
-        vistaGestor.mensajeRecompensas();
-    }
-
-    public void modificarFechaDeFin(LocalDate fechaDeFin, String  nombreDeUsuario) {
-        gestorDeProyecto.buscarProyecto( nombreDeUsuario).setFechaDeFin(fechaDeFin);
-        vistaGestor.mensajeFechaDeFin();
-    }
 
     public void modificarDescripcionDeProyecto(String descripcion, String idProyecto) {
         gestorDeProyecto.buscarProyecto(idProyecto).setDescripcion(descripcion);
         vistaGestor.mensajeDeCambioDeDescripcion();
     }
 
-    public GestorDeUsuarios getGestorDeUsuarios() {
-        return gestorDeUsuarios;
-    }
+
 
     public boolean inicioDeSecionGestor(String nombreUsuario, String contraseña) {
         if (gestorDeUsuarios.buscarUsuario(nombreUsuario) == null) {

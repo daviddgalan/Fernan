@@ -14,17 +14,6 @@ public class Gestor extends Usuario implements Serializable {
         proyectosCreados = new ArrayList<>();
     }
 
-
-    @Override
-    public void cerrarSecion() {
-        setBloqueado(false);
-    }
-
-    public boolean cambioDeUsusario(String nuevoUsuario ){
-        super.cambioDeNombreDeUsusario(nuevoUsuario);
-        return true;
-    }
-
     public ArrayList<Proyecto> verArrayDeProyectosDeGestor(){
         return proyectosCreados;
     }
@@ -48,9 +37,6 @@ public class Gestor extends Usuario implements Serializable {
         return false;
     }
 
-    public void oridenarPorImporteFinanciado(){
-        proyectosCreados.sort((a , b) ->(b.getCantidadFinanciada()-a.getCantidadFinanciada()));
-    }
 
     public Proyecto buscarProyectosDeGestor(String idProyecto){
         for (int i = 0; i <proyectosCreados.size() ; i++) {
@@ -64,7 +50,5 @@ public class Gestor extends Usuario implements Serializable {
         return proyectosCreados;
     }
 
-    public void setUsuarioBloqueado(boolean usuarioBloqueado) {
-        this.usuarioBloqueado = usuarioBloqueado;
-    }
+
 }

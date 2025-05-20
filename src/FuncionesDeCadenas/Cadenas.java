@@ -51,27 +51,5 @@ public class Cadenas implements Serializable {
     }
 
 
-    public static boolean minimoTituloProyecto(String titulo){
-        if(titulo.length()<2||titulo.length()>6){
-            return false;
-        }else{
-            return true;
-        }
-    }
-
-    public static boolean minimoDescripcionProyecto(String descripcion){
-        if(descripcion.length()<5||descripcion.length()>20){
-            return false;
-        }else{
-            return true;
-        }
-    }
-    public static boolean comprobarCorreo(String coreo ){
-        if(coreo.contains("@")&&coreo.contains(".com")){
-            return true;
-        }else{
-            return false;
-        }
-    }
 
 }

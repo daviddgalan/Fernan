@@ -73,16 +73,6 @@ public class GestorDeProyecto implements Serializable {
         proyectos.sort((a,b)->a.getFechaDeApertura().compareTo(b.getFechaDeApertura()));
     }
 
-    public boolean aterarProyecto(Proyecto proyecto,String id){
-        for (int i = 0; i <gestorProyecto.size() ; i++) {
-            if (gestorProyecto.get(i).getId().equals(id)){
-                gestorProyecto.add(i,proyecto);
-                return true;
-            }
-        }
-        return false;
-    }
-
     public ArrayList<Proyecto> verTodosLosProyectos(){
         return gestorProyecto;
     }

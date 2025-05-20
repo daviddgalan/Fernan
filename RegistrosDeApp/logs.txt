@@ -231,3 +231,83 @@
  Las recompensas ofrecidas son de [], cantidadInvertida=17.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
 
  la fecha en la que se elimino el proyecto fue 2025-04-22T10:52:58.776670
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-20T09:18:43.553757600
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-20T09:20:56.539539800
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=17.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-05-20T09:21:16.774472700
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-20T10:12:07.464664200
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=91.0, fechaDeInversion=2000-11-11, inversor=El nombre del usuario es Marcos, su correo registrado es andrevelezg42@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-05-20T10:12:44.671648100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-20T10:26:41.267378900
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-20T18:57:56.566803700
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-05-20T18:58:31.030008400
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-20T18:59:38.305415800
+ Se ha creado un proyecto el cual es El nombre del proyecto es pepe
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 2000.0
+ hasta ahora se ha financiado 0
+ La fecha de apertura fue 2000-11-11
+ la fecha de finalización es 2001-11-11
+ Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-05-20T19:00:30.774821500
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-20T19:15:02.830367700
+ Se ha creado un proyecto el cual es El nombre del proyecto es pepe
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 0
+ La fecha de apertura fue 2000-11-11
+ la fecha de finalización es 2000-11-11
+ Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-05-20T19:15:40.566218
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-20T19:19:11.205820300
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-20T20:01:02.575499900
+ Se ha creado un proyecto el cual es El nombre del proyecto es pepe
+ su descripción es hola
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 0
+ La fecha de apertura fue 2000-11-11
+ la fecha de finalización es 2000-11-11
+ Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-05-20T20:01:37.322372100

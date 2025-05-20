@@ -65,23 +65,6 @@ public class ControladorInversor implements Serializable {
         vistaInversor.mensajeAmigoAñadido();
     }
 
-    public void cambiarNombreDeInversor(String nombre, String nombreDeUsuario) {
-        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
-            vistaInversor.mensajeUsuarioNoEncontrado();
-        }
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).cambioDeUsusario(nombre);
-        vistaInversor.mensajeCambioDeUsusaio();
-    }
-
-
-    public void cambioDeContraseñaDeInversor(String contraseña, String nombreDeUsuario) {
-        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
-            vistaInversor.mensajeUsuarioNoEncontrado();
-        }
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).cambioDeContraseña(contraseña);
-        vistaInversor.mensajeDeCabioDeContraseña();
-    }
-
     public boolean inicioDeSecionInversor
             (String nombreDeUsuario, String contraseña) {
         if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario) == null) {
@@ -96,13 +79,19 @@ public class ControladorInversor implements Serializable {
         }
         return false;
     }
-    public void invertir(String nombreDeUsuario, Proyecto proyecto, float cantidad, LocalDate fechaDeInversion){
+    public void invertir(String nombreDeUsuario, Proyecto proyecto, int cantidad, LocalDate fechaDeInversion){
         if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
             vistaInversor.mensajeUsuarioNoEncontrado();
-        }else{
+            return;
+        }
+
+        if(cantidad>gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verCatera())
+             {vistaInversor.mensajeCantidadInsuficiente();return;}
+
             Inversion nuevaInversion = new Inversion(proyecto,cantidad,fechaDeInversion, (Inversor) gestorDeUsuarios.buscarUsuario(nombreDeUsuario));
             gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).invertir(nuevaInversion);
-        }
+            gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).restarSaldoACartera(cantidad);
+
     }
 
     public void bloquearInversor(String nombreDeGestor) {

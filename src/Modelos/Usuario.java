@@ -6,7 +6,7 @@ import java.io.Serializable;
 import static FuncionesDeCadenas.Cadenas.FortalezaContraseña;
 
 
-public abstract class Usuario implements CerrarCesion, Serializable {
+public abstract class Usuario implements  Serializable {
     private String nombre;
     private String contraseña;
     private String correo;
@@ -53,9 +53,7 @@ public abstract class Usuario implements CerrarCesion, Serializable {
         this.contraseña = contraseña;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
+
 
     public boolean isBloqueado() {
         return bloqueado;

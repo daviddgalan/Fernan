@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class VistaGestor implements Credenciales , Serializable {
+public class VistaGestor {
     Scanner S = new Scanner(System.in);
 
 
@@ -19,13 +19,6 @@ public class VistaGestor implements Credenciales , Serializable {
         return codigo;
     }
 
-    public void pedirUsuario(){
-        System.out.println("Por favor introduzca el nombre de usuario/alias");
-    }
-
-    public void PedirContraseña(){
-        System.out.println("Por favor introduzca su contraseña");
-    }
 
     public void saludarUsuario(){
         System.out.println("Bienvenido al modo gestor");
@@ -35,9 +28,6 @@ public class VistaGestor implements Credenciales , Serializable {
         System.out.println(" Estos son los proyectos creados por el gestor " + nombreDeGestor );
     }
 
-    public void mensajeDeProyectoBuscado(){
-        System.out.println(" EL proyecto buscado és ");
-    }
 
     public void mostrarProyectoDeGestor(ArrayList<Proyecto> proyecto){
         if(proyecto.isEmpty()){
@@ -54,23 +44,17 @@ public class VistaGestor implements Credenciales , Serializable {
     public void mensajeProyectosOrdenadosPorFecha(){
         System.out.println("Los proyectos fueron ordenados por fecha");
     }
+
     public void mensajeCambioDeCambioDeCategoria(){
         System.out.println("La categoria fue cambiada");
     }
+
     public void mensajeDeCambioDeNombre(){
         System.out.println("El nombre del proyecto fué cambiado");
     }
 
     public void mensajeDeCambioDeDescripcion(){
         System.out.println("La descripción del proyecto fué cambiado");
-    }
-
-    public void mensajeDeCambioDeCambioCategoria(){
-        System.out.println("La categoría fué cambiada");
-    }
-
-    public void mensajeCantidadNecesaria() {
-        System.out.println("La cantidad necesaria fué cambiada");
     }
 
     public void mensajeCantidadFinanciada() {
@@ -81,32 +65,14 @@ public class VistaGestor implements Credenciales , Serializable {
         System.out.println("La fecha de apertura fué cambiada");
     }
 
-    public void mensajeRecompensas() {
-        System.out.println("Las recompensas fueron cambiadas");
-    }
-
-    public void mensajeFechaDeFin() {
-        System.out.println("La fecha de fin fué cambiada");
-    }
-
     public void mensajeProyectoCreado(){System.out.println("El proyecto fué creado");}
-
-
 
     public void usuarioBloqueado(){
         System.out.println("El usuario ha sido bloqueado");
     }
 
-    public void mensajeProyectoNoEncontrado(){System.out.println("El proyecto no fué encontrado");}
-
     public void mensajeProyectoEliminado(){
         System.out.println("El proyecto fué eliminado");
-    }
-
-    public void opcinesDelGestor(){
-        System.out.println("1: Ver todos mis proyectos");
-        System.out.println("2: Cambio de credenciales");
-        System.out.println("3: Cerrar sesión");
     }
 
     public void mostrarInversiones(ArrayList<Inversion> Inversiones){

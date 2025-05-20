@@ -1,7 +1,7 @@
 package Modelos;
 
 import Inversión.Inversion;
-import MoldelosGestores.GestorDeProyecto;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,10 +19,7 @@ public class Inversor extends Usuario  implements Serializable {
         inversionesRealizadas = new ArrayList<>();
     }
 
-    @Override
-    public void cerrarSecion() {
-        setBloqueado(false);
-    }
+
 
     public void añadirSaldoACartera(int saldo) {
         this.cartera += saldo;
@@ -31,8 +28,6 @@ public class Inversor extends Usuario  implements Serializable {
     public void restarSaldoACartera(int saldo) {
         this.cartera -= saldo;
     }
-
-
 
     public int verCatera() {
         return cartera;
@@ -49,10 +44,6 @@ public class Inversor extends Usuario  implements Serializable {
     }
 
     public boolean añadirAmigo(Amigo amigo){amigos.add(amigo);return true;}
-
-    public void setUsuarioBloqueado(boolean usuarioBloqueado) {
-        this.usuarioBloqueado = usuarioBloqueado;
-    }
 
     public ArrayList<Amigo> verListaDeAmigos(){
         return amigos;

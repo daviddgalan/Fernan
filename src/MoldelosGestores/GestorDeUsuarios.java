@@ -11,10 +11,7 @@ import java.util.HashMap;
 
 public class GestorDeUsuarios implements Serializable {
 
-
-
     private HashMap<String, Usuario> gestorDeUsuarios ;
-
 
     public HashMap<String, Usuario> getGestorDeUsuarios() {
         return gestorDeUsuarios;
@@ -29,10 +26,6 @@ public class GestorDeUsuarios implements Serializable {
 
     }
 
-    public boolean eliminarUsuario(String id) {
-        gestorDeUsuarios.remove(id);
-        return true;
-    }
 
     public Usuario buscarUsuario(String id) {
         if (gestorDeUsuarios.get(id) == null) {
@@ -42,14 +35,6 @@ public class GestorDeUsuarios implements Serializable {
         }
     }
 
-    public boolean modificarUsuaio(Usuario usuaio, String id) {
-        if (gestorDeUsuarios.get(id) == null) {
-            return false;
-        } else {
-            gestorDeUsuarios.put(id, usuaio);
-            return true;
-        }
-    }
 
     public Inversor verMetodosDeInversor(Usuario usuario){
         if(usuario.getClass().getSimpleName().equals("Inversor")) {
@@ -59,9 +44,6 @@ public class GestorDeUsuarios implements Serializable {
         return null;
     }
 
-    public HashMap<String,Usuario> mostrarArrayDeUsuario(){
-        return gestorDeUsuarios;
-    }
 
     public void setGestorDeUsuarios(HashMap<String, Usuario> gestorDeUsuarios) {
         this.gestorDeUsuarios =gestorDeUsuarios;
