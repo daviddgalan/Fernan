@@ -7,7 +7,6 @@ import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.*;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Scanner;
