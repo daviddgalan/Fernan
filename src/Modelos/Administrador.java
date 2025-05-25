@@ -13,5 +13,4 @@ public class Administrador extends Usuario implements Serializable {
         return true;
     }
 
-
 }

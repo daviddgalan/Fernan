@@ -3,7 +3,6 @@ package MoldelosGestores;
 
 import Modelos.Gestor;
 import Modelos.Inversor;
-import Modelos.Persistencia;
 import Modelos.Usuario;
 
 import java.io.Serializable;

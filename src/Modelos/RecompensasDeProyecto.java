@@ -1,6 +1,5 @@
 package Modelos;
 
-import javax.swing.*;
 import java.io.Serializable;
 
 public class RecompensasDeProyecto implements Serializable {

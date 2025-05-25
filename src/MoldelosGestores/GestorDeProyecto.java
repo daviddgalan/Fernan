@@ -2,7 +2,6 @@ package MoldelosGestores;
 
 import Inversión.Inversion;
 import Modelos.Proyecto;
-import Vistas.VistaProyecto;
 
 
 import java.io.Serializable;
