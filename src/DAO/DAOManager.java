@@ -9,7 +9,7 @@ public class DAOManager {
     private final String USER;
     private final String PASS;
     private static DAOManager singlenton;
-    /*comentario*/
+
 
 
     private DAOManager() {

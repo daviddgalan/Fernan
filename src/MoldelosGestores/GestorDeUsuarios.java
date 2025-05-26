@@ -22,7 +22,6 @@ public class GestorDeUsuarios implements Serializable {
 
     public void agregarUsuarios(Usuario usuario) {
         gestorDeUsuarios.put(usuario.getNombre(), usuario);
-
     }
 
 
