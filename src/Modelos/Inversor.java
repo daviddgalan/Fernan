@@ -54,7 +54,11 @@ public class Inversor extends Usuario  implements Serializable {
         return true;
     }
 
-    public boolean añadirAmigo(Amigo amigo){amigos.add(amigo);return true;}
+    public void añadirAmigo(Amigo amigo){amigos.add(amigo);}
+
+    public void setListaAmigos(ArrayList<Amigo> amigos) {
+        this.amigos = amigos;
+    }
 
     public ArrayList<Amigo> verListaDeAmigos(){
         return amigos;

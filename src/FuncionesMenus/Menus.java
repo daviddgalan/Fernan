@@ -63,9 +63,9 @@ public class Menus implements Serializable {
         System.out.println("3: Ver saldo de cartera");
         System.out.println("4: Aumentar saldo");
         System.out.println("5  Disminuir saldo");
-        System.out.println("6: Ver amigos");
-        System.out.println("7: Añadir amigos");
-        System.out.println("8: Cambiar credenciales");
+        System.out.println("6: Cambiar credenciales");
+        System.out.println("7: Ver amigos");
+        System.out.println("8: Añadir amigos");
         System.out.println("9: Invertir");
         System.out.println("10: Enviar correo con tus inversiones en excel");
         System.out.println("11: Salir");

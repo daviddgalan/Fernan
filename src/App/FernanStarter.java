@@ -81,10 +81,12 @@ public class FernanStarter implements Serializable {
                 "P005",
                 "davidGuapo"
         );
+
+
         dao.open();
         gestorDeUsuarios.setGestorDeUsuarios(daoUsuarioSQL.obtenerTodos(dao));
         gestorDeProyecto.setGestorProyecto(daoProyectoSQL.obtenerProyectos(dao));
-
+        daoProyectoSQL.modificarProyecto(p5,dao);
 
         while (opcionesDeMenu != 7) {
 
@@ -408,14 +410,15 @@ public class FernanStarter implements Serializable {
                                                 controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioInversor, nuevaContraseña);
                                                 break;
                                             case 7:
-                                                controladorInversor.mostrarAmigosDelIversor(nombreDeUsuarioInversor);
+                                                controladorInversor.mostrarAmigosDelIversor(nombreDeUsuarioInversor, dao);
+                                                break;
                                             case 8:
                                                 System.out.println("Ingresa el nombre del amigo");
                                                 String nombreDeAmigo = S.next();
                                                 System.out.println("Ingresa el correo de amigo");
                                                 String correoDeAmigo = S.next();
                                                 Amigo nuevoAmigo = new Amigo(nombreDeAmigo, correoDeAmigo);
-                                                controladorInversor.añadirAmigoDeInversor(nuevoAmigo, nombreDeUsuarioInversor);
+                                                controladorInversor.añadirAmigoDeInversor(nuevoAmigo, nombreDeUsuarioInversor, dao);
                                                 break;
                                             case 9:
                                                 System.out.println("Escribe el id del proyecto en el que quieres invertir");
