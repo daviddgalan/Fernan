@@ -1,6 +1,9 @@
 package Controladores;
 
+import DAO.DAOManager;
+import DAO.DaoUsuarioSQL;
 import FuncionesDeCorreo.FuncionesDeCorreo;
+import Modelos.Administrador;
 import Modelos.Categoria;
 import Modelos.RecompensasDeProyecto;
 import MoldelosGestores.GestorDeProyecto;
@@ -14,20 +17,30 @@ public class ControladorAdministrador implements Serializable {
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaAdministrador vistaAdministrador;
     private GestorDeProyecto gestorDeProyecto;
-    public ControladorAdministrador(GestorDeUsuarios gestorDeUsuarios, VistaAdministrador vistaAdministrador, GestorDeProyecto gestorDeProyecto) {
+    private DAOManager dao;
+    private DaoUsuarioSQL daoUsuarioSQL;
+
+
+
+    public ControladorAdministrador(GestorDeUsuarios gestorDeUsuarios, VistaAdministrador vistaAdministrador, GestorDeProyecto gestorDeProyecto, DAOManager dao, DaoUsuarioSQL daoUsuarioSQL) {
         this.gestorDeUsuarios = gestorDeUsuarios;
         this.vistaAdministrador = vistaAdministrador;
         this.gestorDeProyecto =gestorDeProyecto;
+        this.dao = dao;
+        this.daoUsuarioSQL=daoUsuarioSQL;
     }
 
-    public void cambiarContraseñaAdministrdor(String contraseña, String  nombreDeUsuario) {
-        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).setContraseña(contraseña);
+    public void cambiarContraseñaAdministrdor(String contraseña, String  nombreDeUsuario, String  nuevoNombreDeUsuario) {
+        Administrador administrador = new Administrador(nuevoNombreDeUsuario, gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getCorreo(),contraseña);
+        gestorDeUsuarios.cambiarUsuarioHashMap(nombreDeUsuario,administrador);
+        gestorDeUsuarios.buscarUsuario(nuevoNombreDeUsuario).setContraseña(contraseña);
+        daoUsuarioSQL.actualizarUsuario(nombreDeUsuario, gestorDeUsuarios.buscarUsuario(nuevoNombreDeUsuario), dao);
         vistaAdministrador.cambioDeContraseña();
     }
 
 
-    public void cambiarUsuarioDeAdministrador(String nombreDeUsuario, String  NuevonombreDeUsuario) {
-        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).cambioDeNombreDeUsusario(NuevonombreDeUsuario);
+    public void cambiarUsuarioDeAdministrador(String nombreDeUsuario, String  nuevoNombreDeUsuario) {
+        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).cambioDeNombreDeUsusario(nuevoNombreDeUsuario);
         vistaAdministrador.cambioDeUsuario();
     }
 
@@ -69,7 +82,7 @@ public class ControladorAdministrador implements Serializable {
     }
 
     public boolean inicioDeSecionAdmin(String nombreDeUsuario, String contraseña) {
-        if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario) == null) {
+        if (gestorDeUsuarios.buscarUsuario(nombreDeUsuario) == null) {
             vistaAdministrador.credencialesNoValidos();
             return false;
         } else if (gestorDeUsuarios.buscarUsuario( nombreDeUsuario).getContraseña().equals(contraseña) && gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getClass().getSimpleName().equals("Administrador")) {

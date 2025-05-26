@@ -10,6 +10,7 @@ public abstract class Usuario implements  Serializable {
     private String nombre;
     private String contraseña;
     private String correo;
+    private int tipoUsuario;
     private boolean bloqueado;
 
     public Usuario(String nombre, String correo,String contraseña) {
@@ -17,6 +18,14 @@ public abstract class Usuario implements  Serializable {
         this.correo = correo;
         this.bloqueado = false;
         this.nombre = nombre;
+    }
+
+
+    public void setTipoUsuario(int tipo){
+        this.tipoUsuario=tipo;
+    }
+    public int getTipoUsuario(){
+        return tipoUsuario;
     }
 
     public boolean cambioDeContraseña(String contraseña) {

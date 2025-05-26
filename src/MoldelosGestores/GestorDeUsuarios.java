@@ -25,6 +25,11 @@ public class GestorDeUsuarios implements Serializable {
 
     }
 
+    public void cambiarUsuarioHashMap(String nombreAntiguo, Usuario usuario){
+        gestorDeUsuarios.remove(nombreAntiguo);
+        gestorDeUsuarios.put(usuario.getNombre(),usuario);
+    }
+
 
     public Usuario buscarUsuario(String id) {
         if (gestorDeUsuarios.get(id) == null) {
@@ -42,7 +47,6 @@ public class GestorDeUsuarios implements Serializable {
         }
         return null;
     }
-
 
     public void setGestorDeUsuarios(HashMap<String, Usuario> gestorDeUsuarios) {
         this.gestorDeUsuarios =gestorDeUsuarios;
