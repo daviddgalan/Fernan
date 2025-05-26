@@ -20,6 +20,10 @@ public class Inversor extends Usuario  implements Serializable {
         inversionesRealizadas = new ArrayList<>();
     }
 
+    public void setInversionesRealizadas(ArrayList<Inversion> inversionesRealizadas) {
+        this.inversionesRealizadas = inversionesRealizadas;
+    }
+
     public Inversor(String nombre, String correo, String contraseña, boolean usuarioBloqueado) {
         super(nombre, correo, contraseña);
         this.cartera = 0;
@@ -67,7 +71,5 @@ public class Inversor extends Usuario  implements Serializable {
     public Inversion verUltimaInversion(){
         return inversionesRealizadas.get(inversionesRealizadas.size()-1);
     }
-
-
 }
 

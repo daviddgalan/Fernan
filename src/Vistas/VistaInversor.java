@@ -19,12 +19,14 @@ public class VistaInversor  {
         System.out.println("Las inversiones realizadas por el Inversor " + nombreDeInversor + " son ");
     }
 
-    public void mostrarInverciones(ArrayList<Inversion> inversiones) {
+    public void mostrarInverciones(ArrayList<Inversion> inversiones,String nombreDeUsuario) {
         if(inversiones.isEmpty()){
             System.out.println("No se ha realizado ninguna inversión");
         }
         for (int i = 0; i < inversiones.size(); i++) {
-            System.out.println(inversiones.get(i));
+            if(inversiones.get(i).getInversor().getNombre().equals(nombreDeUsuario)) {
+                System.out.println(inversiones.get(i));
+            }
         }
     }
 

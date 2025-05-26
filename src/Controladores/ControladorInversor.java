@@ -1,31 +1,37 @@
 package Controladores;
+import DAO.DAOInversion;
+import DAO.DAOManager;
 import FuncionesDeCorreo.FuncionesDeCorreo;
 import Inversión.Inversion;
 import Modelos.Amigo;
 import Modelos.Inversor;
 import Modelos.Proyecto;
 import Modelos.Usuario;
+import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
 import Vistas.VistaInversor;
-
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class ControladorInversor implements Serializable {
+    private GestorDeProyecto gestorDeProyecto;
     private GestorDeUsuarios gestorDeUsuarios;
     private VistaInversor vistaInversor;
 
-    public ControladorInversor(GestorDeUsuarios gestoDeUsuarios, VistaInversor vistaInversor) {
+    public ControladorInversor(GestorDeUsuarios gestoDeUsuarios, VistaInversor vistaInversor,GestorDeProyecto gestorDeProyecto) {
         this.gestorDeUsuarios = gestoDeUsuarios;
         this.vistaInversor = vistaInversor;
+        this.gestorDeProyecto = gestorDeProyecto;
     }
 
-    public void misInversiones(String nombreDeUsuario) {
+    public void misInversiones(String nombreDeUsuario,DAOManager daoManager) {
+        DAOInversion daoInversion = new DAOInversion();
         if(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)==null){
             vistaInversor.mensajeUsuarioNoEncontrado();
         }
         vistaInversor.textoParaMostrarInversiones(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
-        vistaInversor.mostrarInverciones(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).mostrarListaDeInversiones());
+        vistaInversor.mostrarInverciones(daoInversion.optenerInversion(daoManager,gestorDeProyecto,gestorDeUsuarios),nombreDeUsuario);
     }
 
 
@@ -79,7 +85,8 @@ public class ControladorInversor implements Serializable {
         }
         return false;
     }
-    public void invertir(String nombreDeUsuario, Proyecto proyecto, int cantidad, LocalDate fechaDeInversion){
+    public void invertir(String nombreDeUsuario, Proyecto proyecto, int cantidad, LocalDate fechaDeInversion, DAOManager daoManager){
+        DAOInversion daoInversion = new DAOInversion();
         if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
             vistaInversor.mensajeUsuarioNoEncontrado();
             return;
@@ -89,8 +96,10 @@ public class ControladorInversor implements Serializable {
              {vistaInversor.mensajeCantidadInsuficiente();return;}
 
             Inversion nuevaInversion = new Inversion(proyecto,cantidad,fechaDeInversion, (Inversor) gestorDeUsuarios.buscarUsuario(nombreDeUsuario));
+            daoInversion.insertarInversion(nuevaInversion,daoManager);
             gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).invertir(nuevaInversion);
             gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).restarSaldoACartera(cantidad);
+
 
     }
 

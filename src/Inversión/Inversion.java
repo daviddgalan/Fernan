@@ -31,6 +31,10 @@ public class Inversion implements Serializable {
         return inversor;
     }
 
+    public LocalDate getFechaDeInversion() {
+        return fechaDeInversion;
+    }
+
     @Override
     public String toString() {
         return "Inversion{" +

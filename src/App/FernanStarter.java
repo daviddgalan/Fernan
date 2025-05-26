@@ -53,7 +53,7 @@ public class FernanStarter implements Serializable {
         ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador, gestorDeProyecto, dao, daoUsuarioSQL);
         ControladorDeProyecto controladorDeProyecto = new ControladorDeProyecto(gestorDeProyecto, vistaProyecto);
         ControladorGestor controladorGestor = new ControladorGestor(gestorDeUsuarios, vistaGestor, gestorDeProyecto);
-        ControladorInversor controladorInversor = new ControladorInversor(gestorDeUsuarios, vistaInversor);
+        ControladorInversor controladorInversor = new ControladorInversor(gestorDeUsuarios, vistaInversor,gestorDeProyecto);
 
 
         Logs logs = new Logs();
@@ -78,7 +78,6 @@ public class FernanStarter implements Serializable {
 
 
         dao.open();
-
         gestorDeUsuarios.setGestorDeUsuarios(daoUsuarioSQL.obtenerTodos(dao));
 
 
@@ -350,7 +349,7 @@ public class FernanStarter implements Serializable {
                                         System.out.println("Ingresa tu nombre de usuario");
                                         nombreDeUsuarioInversor = S.next();
                                         System.out.println("Ingresa la contraseña del usuario");
-                                        String contraseñaInversor = S.next();
+                                         String contraseñaInversor = S.next();
                                         if (gestorDeUsuarios.buscarUsuario(nombreDeUsuarioInversor).isBloqueado()) {
                                             controladorInversor.bloquearInversor(nombreDeUsuarioInversor);
                                             System.out.println("Usuario bloqueado");
@@ -377,7 +376,7 @@ public class FernanStarter implements Serializable {
                                     while (opcionesInversor != 11) {
                                         switch (opcionesInversor = muenuInversor()) {
                                             case 1:
-                                                controladorInversor.misInversiones(nombreDeUsuarioInversor);
+                                                controladorInversor.misInversiones(nombreDeUsuarioInversor,dao);
                                                 break;
                                             case 2:
                                                 controladorDeProyecto.verTodosLosProyectos();
@@ -424,7 +423,7 @@ public class FernanStarter implements Serializable {
                                                 System.out.println("Escribe el día de la inversión:");
                                                 int dia = S.nextInt();
                                                 LocalDate fechaIversion = LocalDate.of(año, mes, dia);
-                                                controladorInversor.invertir(nombreDeUsuarioInversor, gestorDeProyecto.buscarProyecto(proyecto), inversion, fechaIversion);
+                                                controladorInversor.invertir(nombreDeUsuarioInversor, gestorDeProyecto.buscarProyecto(proyecto), inversion, fechaIversion,dao);
                                                 logs.RegistroDeInversion(controladorInversor.verInvercionesRealizadas(nombreDeUsuarioInversor).toString(), nombreDeUsuarioInversor);
                                                 break;
                                             case 10:
