@@ -1,5 +1,6 @@
 package Controladores;
 import DAO.DAOInversion;
+import DAO.DAOInversorSQL;
 import DAO.DAOManager;
 import FuncionesDeCorreo.FuncionesDeCorreo;
 import Inversión.Inversion;
@@ -13,6 +14,7 @@ import Vistas.VistaInversor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ControladorInversor implements Serializable {
     private GestorDeProyecto gestorDeProyecto;
@@ -39,12 +41,14 @@ public class ControladorInversor implements Serializable {
         vistaInversor.verCarteraDeInversor(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verCatera());
     }
 
-    public void añadirCreditoAcartera(int creditoAñadido, String nombreDeUsuario) {
+    public void añadirCreditoAcartera(int creditoAñadido, String nombreDeUsuario ,DAOManager daoManager) {
+        DAOInversorSQL daoInversorSQL = new DAOInversorSQL();
        if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
            vistaInversor.mensajeUsuarioNoEncontrado();
        }
         gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).añadirSaldoACartera(creditoAñadido);
         vistaInversor.mensajeCreditoAñadido(creditoAñadido);
+        daoInversorSQL.insertarInversor(nombreDeUsuario,creditoAñadido,daoManager);
     }
 
 
@@ -113,4 +117,8 @@ public class ControladorInversor implements Serializable {
     public void añadirInversorAGestorDeUsuarios(Usuario Gestor){
         gestorDeUsuarios.agregarUsuarios(Gestor);
     }
+    public void cambiarCartera(int cartera,String nombreDeUsuario){
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).setCartera(cartera);
+    }
+
 }

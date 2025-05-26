@@ -3,9 +3,7 @@ import Controladores.ControladorAdministrador;
 import Controladores.ControladorDeProyecto;
 import Controladores.ControladorGestor;
 import Controladores.ControladorInversor;
-import DAO.DAOManager;
-import DAO.DaoProyectoSQL;
-import DAO.DaoUsuarioSQL;
+import DAO.*;
 import Inversión.Inversion;
 import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
@@ -43,6 +41,7 @@ public class FernanStarter implements Serializable {
         DAOManager dao = DAOManager.getSinglentonInstance();
         DaoUsuarioSQL daoUsuarioSQL = new DaoUsuarioSQL();
         DaoProyectoSQL daoProyectoSQL = new DaoProyectoSQL();
+        DAOInversorSQL daoInversorSQL = new DAOInversorSQL();
 
         ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador, gestorDeProyecto, dao, daoUsuarioSQL);
         ControladorDeProyecto controladorDeProyecto = new ControladorDeProyecto(gestorDeProyecto, vistaProyecto);
@@ -82,12 +81,10 @@ public class FernanStarter implements Serializable {
                 "P005",
                 "davidGuapo"
         );
-
-
         dao.open();
         gestorDeUsuarios.setGestorDeUsuarios(daoUsuarioSQL.obtenerTodos(dao));
         gestorDeProyecto.setGestorProyecto(daoProyectoSQL.obtenerProyectos(dao));
-        daoProyectoSQL.modificarProyecto(p5,dao);
+
 
         while (opcionesDeMenu != 7) {
 
@@ -381,6 +378,7 @@ public class FernanStarter implements Serializable {
                                     System.out.println(preps.getUltimoInicioSesion(nombreDeUsuarioInversor));
                                     preps.setUltimoInicioSesion(nombreDeUsuarioInversor);
                                     preps.guardar();
+                                    controladorInversor.cambiarCartera(daoInversorSQL.obtenerInversores(dao,nombreDeUsuarioInversor),nombreDeUsuarioInversor);
                                     while (opcionesInversor != 11) {
                                         switch (opcionesInversor = muenuInversor()) {
                                             case 1:
@@ -395,7 +393,7 @@ public class FernanStarter implements Serializable {
                                             case 4:
                                                 System.out.println("¿Cuánto quieres añadir a la cartera?");
                                                 int nuevoCredito = S.nextInt();
-                                                controladorInversor.añadirCreditoAcartera(nuevoCredito, nombreDeUsuarioInversor);
+                                                controladorInversor.añadirCreditoAcartera(nuevoCredito, nombreDeUsuarioInversor,dao);
                                                 break;
                                             case 5:
                                                 System.out.println("¿Cuánto quieres restar a la cartera?");

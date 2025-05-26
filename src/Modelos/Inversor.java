@@ -71,5 +71,9 @@ public class Inversor extends Usuario  implements Serializable {
     public Inversion verUltimaInversion(){
         return inversionesRealizadas.get(inversionesRealizadas.size()-1);
     }
+
+    public void setCartera(int cartera) {
+        this.cartera = cartera;
+    }
 }
 

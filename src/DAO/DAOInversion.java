@@ -15,7 +15,7 @@ public class DAOInversion implements InversionDao {
 
     @Override
     public void insertarInversion(Inversion inversion, DAOManager daoManager) {
-        String sql = "INSERT INTO inversion VALUES('"+inversion.getInversor().getNombre()+"','"+inversion.getProyecto1().getId()+"','"+ Date.valueOf(inversion.getFechaDeInversion()) +"',"+inversion.getCantidadInvertida()+")";
+        String sql = "INSERT INTO inversion (NombreInversor,idProyecto,FechaInversion,CantidadInvertida) VALUES('"+inversion.getInversor().getNombre()+"','"+inversion.getProyecto1().getId()+"','"+ Date.valueOf(inversion.getFechaDeInversion()) +"',"+inversion.getCantidadInvertida()+")";
         daoManager.ejecutarSentencia(sql);
     }
 
