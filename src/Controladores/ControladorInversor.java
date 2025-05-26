@@ -1,4 +1,5 @@
 package Controladores;
+import DAO.DAOAmigoSQL;
 import DAO.DAOInversion;
 import DAO.DAOManager;
 import FuncionesDeCorreo.FuncionesDeCorreo;
@@ -57,16 +58,20 @@ public class ControladorInversor implements Serializable {
     }
 
 
-    public void mostrarAmigosDelIversor(String nombreDeUsuairo) {
+    public void mostrarAmigosDelIversor(String nombreDeUsuairo, DAOManager dao) {
+        DAOAmigoSQL daoAmigoSQL = new DAOAmigoSQL();
+
+        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuairo)).setListaAmigos(daoAmigoSQL.obtenerAmigo(dao, nombreDeUsuairo));
         vistaInversor.mensajeAmigos(gestorDeUsuarios.buscarUsuario(nombreDeUsuairo).getNombre());
         vistaInversor.verAmigosDeGestor(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuairo)).verListaDeAmigos());
     }
 
-    public void añadirAmigoDeInversor(Amigo amigo, String nombreDeUsuario) {
+    public void añadirAmigoDeInversor(Amigo amigo, String nombreDeUsuario, DAOManager dao) {
+        DAOAmigoSQL daoAmigoSQL = new DAOAmigoSQL();
         if(gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario))==null){
             vistaInversor.mensajeUsuarioNoEncontrado();
         }
-        gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).añadirAmigo(amigo);
+        daoAmigoSQL.insertarAmigo(amigo,dao,nombreDeUsuario);
         vistaInversor.mensajeAmigoAñadido();
     }
 

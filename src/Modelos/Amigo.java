@@ -11,6 +11,9 @@ public class Amigo implements Serializable {
         this.correo = correo;
     }
 
+    public String getNombre(){ return nombre;}
+    public String getCorreo(){ return correo;}
+
     @Override
     public String toString() {
         return "El nombre es " + nombre + "su correo es " + correo;

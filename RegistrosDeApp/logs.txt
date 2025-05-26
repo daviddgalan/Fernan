@@ -369,3 +369,44 @@
  inicio de sesion realizado por Andres el cuel es Administrador
 
  la fecha inicio de sesion fue 2025-05-26T15:47:31.660310200
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T19:54:02.107314400
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es EcoLámpara
+ su descripción es Lámpara ecológica hecha con materiales reciclados
+ Pertenece a la categoría Tecnologia
+ Se necesita una cantidad de 5000.0
+ hasta ahora se ha financiado 1200
+ La fecha de apertura fue 2025-05-01
+ la fecha de finalización es 2025-06-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=50.0, fechaDeInversion=2016-12-14, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-05-26T19:55:07.247406900
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es EcoLámpara
+ su descripción es Lámpara ecológica hecha con materiales reciclados
+ Pertenece a la categoría Tecnologia
+ Se necesita una cantidad de 5000.0
+ hasta ahora se ha financiado 1200
+ La fecha de apertura fue 2025-05-01
+ la fecha de finalización es 2025-06-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=50.0, fechaDeInversion=2016-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-05-26T19:57:14.815974800
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T20:55:12.543443700
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T20:59:30.348181400
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T21:01:54.186555300
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T21:04:01.300393100
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T21:05:10.342068900
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T21:08:39.138109200
