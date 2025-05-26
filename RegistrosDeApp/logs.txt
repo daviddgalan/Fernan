@@ -369,3 +369,58 @@
  inicio de sesion realizado por Andres el cuel es Administrador
 
  la fecha inicio de sesion fue 2025-05-26T15:47:31.660310200
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:09:10.762324100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:35:43.804857
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-26T17:36:22.021166300
+ Se ha producido una nueva invercin la cual es Inversion{proyecto=El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [], cantidadInvertida=15.0, fechaDeInversion=1000-12-12, inversor=El nombre del usuario es Marcos, su correo registrado es davidgalan001@gmail.com y actualmente su cuenta está activa.} la cual fue realizada por el usuario Marcos
+
+ la fecha en la que se elimino el proyecto fue 2025-05-26T17:36:52.514585700
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-05-26T17:37:48.969552900
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:38:09.578459200
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:45:28.927886900
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:51:39.993688
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:57:43.087297
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T17:59:43.866982100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T18:02:57.849359100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T18:08:02.271968600
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T18:10:31.937170100
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T18:11:41.220909200
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T18:14:21.864330800
+ inicio de sesion realizado por davidGuapo el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-26T18:45:43.264391600

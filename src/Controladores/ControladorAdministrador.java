@@ -62,7 +62,7 @@ public class ControladorAdministrador implements Serializable {
     }
 
     public void ordenarPorFecha(){
-        gestorDeProyecto.ordenarArrayPorFecha(gestorDeProyecto.verArrayDeProyectos());
+        gestorDeProyecto.ordenarArrayPorFecha();
         vistaAdministrador.mensajeProyectosOrdenadosPorFecha();
     }
 

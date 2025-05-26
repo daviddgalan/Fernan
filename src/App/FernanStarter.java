@@ -4,6 +4,7 @@ import Controladores.ControladorDeProyecto;
 import Controladores.ControladorGestor;
 import Controladores.ControladorInversor;
 import DAO.DAOManager;
+import DAO.DaoProyectoSQL;
 import DAO.DaoUsuarioSQL;
 import Inversión.Inversion;
 import Modelos.*;
@@ -21,16 +22,11 @@ public class FernanStarter implements Serializable {
 
         Scanner S = new Scanner(System.in);
         /*Usuarios por defecto*/
-        Administrador administradorPorDefecto = new Administrador("Andres", "davidgalan001@gmail.com", "1234");
-        Gestor gestorPorDefecto = new Gestor("Sergi", "davidgalan001@gmail.com", "1234");
-        Inversor inversorPorDefecto = new Inversor("Marcos", "davidgalan001@gmail.com", "1234");
-        Inversor inversorPorDefecto1 = new Inversor("Andresito", "davidgalan001@gmail.com", "1234");
 
         /*Preferencias*/
         Preferencias preps = new Preferencias();
         /*Proyecto por defecto*/
-
-        Proyecto proyectoPrueba = new Proyecto("da", "da", Categoria.Arte, 100, 1, LocalDate.of(2000, 10, 1), LocalDate.of(2000, 10, 1), "1");
+        Gestor gestor1 = new Gestor("davidGuapo","davidgalan001@gmail.com","1234",false);
 
         /*Bufer para escribir el los registros del programa*/
 
@@ -44,11 +40,9 @@ public class FernanStarter implements Serializable {
         GestorDeUsuarios gestorDeUsuarios = new GestorDeUsuarios();
         GestorDeProyecto gestorDeProyecto = new GestorDeProyecto();
 
-        gestorDeProyecto.añadirProyecto(proyectoPrueba);
-
-
         DAOManager dao = DAOManager.getSinglentonInstance();
         DaoUsuarioSQL daoUsuarioSQL = new DaoUsuarioSQL();
+        DaoProyectoSQL daoProyectoSQL = new DaoProyectoSQL();
 
         ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador, gestorDeProyecto, dao, daoUsuarioSQL);
         ControladorDeProyecto controladorDeProyecto = new ControladorDeProyecto(gestorDeProyecto, vistaProyecto);
@@ -77,10 +71,24 @@ public class FernanStarter implements Serializable {
 
 
 
+        Proyecto p5 = new Proyecto(
+                "Sabor Andino",
+                "Andres come palomas",
+                Categoria.Comida,
+                6000,
+                3500,
+                LocalDate.of(2025, 2, 20),
+                LocalDate.of(2025, 5, 20),
+                "P005",
+                "davidGuapo"
+        );
+
+
         dao.open();
 
         gestorDeUsuarios.setGestorDeUsuarios(daoUsuarioSQL.obtenerTodos(dao));
-
+        gestorDeProyecto.setGestorProyecto(daoProyectoSQL.obtenerProyectos(dao));
+        daoProyectoSQL.modificarProyecto(p5,dao);
 
         while (opcionesDeMenu != 7) {
 
@@ -233,7 +241,7 @@ public class FernanStarter implements Serializable {
                                         case 3:
                                             System.out.println("Escribe id de proyecto que quieres eliminar");
                                             String proyectoId = S.next();
-                                            controladorGestor.eliminarProyecto(proyectoId, nombreDeUsuarioGestor);
+                                            controladorGestor.eliminarProyecto(proyectoId);
                                             logs.RegistroDeElimicacionDeProyecto(proyectoId, nombreDeUsuarioGestor);
                                             break;
                                         case 4:

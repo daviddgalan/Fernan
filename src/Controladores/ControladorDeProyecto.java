@@ -27,8 +27,6 @@ public class ControladorDeProyecto implements Serializable {
         vistaProyecto.mensajeRecompensaAgregada();
     }
 
-
-
     public  void verRecompensasDeProyecto(String idDeProyecto){
         if(gestorDeProyecto.buscarProyecto(idDeProyecto).getId().equals(idDeProyecto)){
             vistaProyecto.verRecompensaDeProyecto(gestorDeProyecto.buscarProyecto(idDeProyecto).verArrayDeProyecto());

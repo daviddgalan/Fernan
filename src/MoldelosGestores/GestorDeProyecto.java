@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class GestorDeProyecto implements Serializable {
-    ArrayList<Proyecto>gestorProyecto;
+    ArrayList<Proyecto> gestorProyecto;
 
     public GestorDeProyecto (){
         gestorProyecto = new ArrayList<Proyecto>();
@@ -68,8 +68,8 @@ public class GestorDeProyecto implements Serializable {
         return gestorProyecto;
     }
 
-    public void ordenarArrayPorFecha(ArrayList<Proyecto> proyectos){
-        proyectos.sort((a,b)->a.getFechaDeApertura().compareTo(b.getFechaDeApertura()));
+    public void ordenarArrayPorFecha(){
+        gestorProyecto.sort((a,b)->a.getFechaDeApertura().compareTo(b.getFechaDeApertura()));
     }
 
     public ArrayList<Proyecto> verTodosLosProyectos(){

@@ -4,6 +4,7 @@ import Inversión.Inversion;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Proyecto implements Serializable {
     private String id;
@@ -14,10 +15,11 @@ public class Proyecto implements Serializable {
     private int cantidadFinanciada;
     private LocalDate fechaDeApertura;
     private LocalDate fechaDeFin;
+    private String nombreCreador;
     private ArrayList <RecompensasDeProyecto> recompensas;
     private ArrayList<Inversion> invercionesRealizadas;
 
-    public Proyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin,String id) {
+    public Proyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin,String id, String nombreCreador) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.categoria = categoria;
@@ -25,6 +27,7 @@ public class Proyecto implements Serializable {
         this.cantidadFinanciada = cantidadFinanciada;
         this.fechaDeApertura = fechaDeApertura;
         this.fechaDeFin = fechaDeFin;
+        this.nombreCreador = nombreCreador;
         this.id = id;
         recompensas = new ArrayList<>();
         invercionesRealizadas = new ArrayList<>();
@@ -37,6 +40,7 @@ public class Proyecto implements Serializable {
     public void setId(String id) {
         this.id = id;
     }
+    public String getNombreCreador(){ return nombreCreador;}
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -62,6 +66,7 @@ public class Proyecto implements Serializable {
         return (int) cantidadNecesaria;
     }
 
+    public String getDescripcion(){ return descripcion;}
 
     public void setFechaDeApertura(LocalDate fechaDeApertura) {
         this.fechaDeApertura = fechaDeApertura;
@@ -71,8 +76,19 @@ public class Proyecto implements Serializable {
         this.fechaDeFin = fechaDeFin;
     }
 
+    public LocalDate getFechaDeFin(){
+        return fechaDeFin;
+    }
+    public LocalDate getFechaDeInicio(){
+        return fechaDeApertura;
+    }
+
     public void añadirRecompensa(RecompensasDeProyecto recompensasDeProyecto){
         recompensas.add(recompensasDeProyecto);
+    }
+
+    public String getCategoria(){
+        return categoria.name();
     }
 
     public ArrayList<RecompensasDeProyecto> verArrayDeProyecto(){
