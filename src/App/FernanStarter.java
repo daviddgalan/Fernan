@@ -3,6 +3,9 @@ import Controladores.ControladorAdministrador;
 import Controladores.ControladorDeProyecto;
 import Controladores.ControladorGestor;
 import Controladores.ControladorInversor;
+import DAO.DAOManager;
+import DAO.DaoUsuarioSQL;
+import Inversión.Inversion;
 import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
 import MoldelosGestores.GestorDeUsuarios;
@@ -18,17 +21,16 @@ public class FernanStarter implements Serializable {
 
         Scanner S = new Scanner(System.in);
         /*Usuarios por defecto*/
-        Administrador administradorPorDefecto = new Administrador("Andres", "andrevelezg42@gmail.com", "1234");
-        Gestor gestorPorDefecto = new Gestor("Sergi", "andrevelezg42@gmail.com", "1234");
-        Inversor inversorPorDefecto = new Inversor("Marcos", "andrevelezg42@gmail.com", "1234");
-        Inversor inversorPorDefecto1 = new Inversor("Andresito", "andrevelezg42@gmail.com", "1234");
+        Administrador administradorPorDefecto = new Administrador("Andres", "davidgalan001@gmail.com", "1234");
+        Gestor gestorPorDefecto = new Gestor("Sergi", "davidgalan001@gmail.com", "1234");
+        Inversor inversorPorDefecto = new Inversor("Marcos", "davidgalan001@gmail.com", "1234");
+        Inversor inversorPorDefecto1 = new Inversor("Andresito", "davidgalan001@gmail.com", "1234");
 
         /*Preferencias*/
         Preferencias preps = new Preferencias();
         /*Proyecto por defecto*/
 
         Proyecto proyectoPrueba = new Proyecto("da", "da", Categoria.Arte, 100, 1, LocalDate.of(2000, 10, 1), LocalDate.of(2000, 10, 1), "1");
-
 
         /*Bufer para escribir el los registros del programa*/
 
@@ -44,18 +46,18 @@ public class FernanStarter implements Serializable {
 
         gestorDeProyecto.añadirProyecto(proyectoPrueba);
 
-        ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador, gestorDeProyecto);
+
+        DAOManager dao = DAOManager.getSinglentonInstance();
+        DaoUsuarioSQL daoUsuarioSQL = new DaoUsuarioSQL();
+
+        ControladorAdministrador controladorAdministrador = new ControladorAdministrador(gestorDeUsuarios, vistaAdministrador, gestorDeProyecto, dao, daoUsuarioSQL);
         ControladorDeProyecto controladorDeProyecto = new ControladorDeProyecto(gestorDeProyecto, vistaProyecto);
         ControladorGestor controladorGestor = new ControladorGestor(gestorDeUsuarios, vistaGestor, gestorDeProyecto);
         ControladorInversor controladorInversor = new ControladorInversor(gestorDeUsuarios, vistaInversor);
 
+
         Logs logs = new Logs();
         Persistencia persistencia = new Persistencia();
-
-        gestorDeUsuarios.agregarUsuarios(administradorPorDefecto);
-        gestorDeUsuarios.agregarUsuarios(gestorPorDefecto);
-        gestorDeUsuarios.agregarUsuarios(inversorPorDefecto);
-        gestorDeUsuarios.agregarUsuarios(inversorPorDefecto1);
 
         String nombreDeUsuarioAdministrador = "";
         String nombreDeUsuarioGestor = "";
@@ -72,8 +74,14 @@ public class FernanStarter implements Serializable {
         boolean credencialesAdmin = false;
         boolean credencialesGestor = false;
         boolean credencialesInversor = false;
-        gestorDeProyecto.setGestorProyecto(persistencia.imprimirProyectos());
-        gestorDeUsuarios.setGestorDeUsuarios(persistencia.imprimirObjeto());
+
+
+
+        dao.open();
+
+        gestorDeUsuarios.setGestorDeUsuarios(daoUsuarioSQL.obtenerTodos(dao));
+
+
         while (opcionesDeMenu != 7) {
 
             switch (opcionesDeMenu = menuPrincipal()) {
@@ -118,7 +126,7 @@ public class FernanStarter implements Serializable {
                                     System.out.println("Escribe la nueva contraseña");
                                     String nuevaContraseña = S.next();
                                     controladorAdministrador.cambiarUsuarioDeAdministrador(nombreDeUsuario, nuevoNombreDeUsuario);
-                                    controladorAdministrador.cambiarContraseñaAdministrdor(nuevaContraseña, nombreDeUsuario);
+                                    controladorAdministrador.cambiarContraseñaAdministrdor(nuevaContraseña, nombreDeUsuario, nuevoNombreDeUsuario);
                                     break;
                                 case 6:
                                     controladorAdministrador.ordenarTodosLosProyectosPorOrdenDeCantidadFinanciada();
@@ -469,6 +477,7 @@ public class FernanStarter implements Serializable {
                                     break;
                             }
                     }
+                dao.close();
             }
         }
 

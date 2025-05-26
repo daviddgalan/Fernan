@@ -15,11 +15,18 @@ public class Inversor extends Usuario  implements Serializable {
     public Inversor(String nombre, String correo, String contraseña) {
         super(nombre, correo, contraseña);
         this.cartera = 0;
+        setTipoUsuario(3);
         usuarioBloqueado = false;
         inversionesRealizadas = new ArrayList<>();
     }
 
-
+    public Inversor(String nombre, String correo, String contraseña, boolean usuarioBloqueado) {
+        super(nombre, correo, contraseña);
+        this.cartera = 0;
+        setTipoUsuario(3);
+        this.usuarioBloqueado = usuarioBloqueado;
+        inversionesRealizadas = new ArrayList<>();
+    }
 
     public void añadirSaldoACartera(int saldo) {
         this.cartera += saldo;

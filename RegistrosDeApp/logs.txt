@@ -311,3 +311,61 @@
  Las recompensas ofrecidas son de [] el cual fue creador por Sergi
 
  la fecha en la que se creo el proyecto fue 2025-05-20T20:01:37.322372100
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-20T20:22:25.271879800
+ Se ha creado un proyecto el cual es El nombre del proyecto es da
+ su descripción es da
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 1
+ La fecha de apertura fue 2000-10-01
+ la fecha de finalización es 2000-10-01
+ Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-05-20T20:23:08.617382300
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-24T19:53:04.807800200
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-24T22:14:24.141865400
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-05-24T22:14:46.937922100
+ inicio de sesion realizado por Andresito el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-25T19:41:57.792094900
+ Se produjo un sierre de secion 
+
+ la fecha en la que se serro la sesion fue 2025-05-25T19:49:29.306671500
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T14:16:19.157189700
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T14:46:39.065941600
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T14:48:36.298043900
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T14:51:53.808720600
+ inicio de sesion realizado por Josito el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T15:19:14.435553600
+ inicio de sesion realizado por Josito el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T15:21:37.638564600
+ inicio de sesion realizado por Josito el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T15:25:08.403987900
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T15:29:07.159661800
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T15:46:06.180428500
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-26T15:47:31.660310200

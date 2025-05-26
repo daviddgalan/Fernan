@@ -19,8 +19,8 @@ public class Menus implements Serializable {
 
     public static int menuAdministrador() {
         Scanner S = new Scanner(System.in);
-        System.out.println("1: Desbloqueo de usuarios");
-        System.out.println("2: Bloquear usario");
+        System.out.println("1: Desbloqueo de usuario");
+        System.out.println("2: Bloquear usuario");
         System.out.println("3: Ver proyectos");
         System.out.println("4: Eliminar proyecto");
         System.out.println("5: Cambios de credenciales");

@@ -11,6 +11,14 @@ public class Gestor extends Usuario implements Serializable {
     public Gestor(String nombre, String correo, String contraseña) {
         super(nombre, correo,contraseña);
         this.usuarioBloqueado = false;
+        setTipoUsuario(2);
+        proyectosCreados = new ArrayList<>();
+    }
+
+    public Gestor(String nombre, String correo, String contraseña, boolean usuarioBloqueado) {
+        super(nombre, correo,contraseña);
+        this.usuarioBloqueado = usuarioBloqueado;
+        setTipoUsuario(2);
         proyectosCreados = new ArrayList<>();
     }
 
