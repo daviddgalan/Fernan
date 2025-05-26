@@ -1,5 +1,5 @@
 package Modelos;
 
 public enum Categoria  {
-    Arte,Tecnología,Cine,Música,Juegos,Comida,Moda;
+    Arte,Tecnologia,Cine,Musica,Juegos,Comida,Moda;
 }

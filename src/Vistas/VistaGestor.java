@@ -29,12 +29,12 @@ public class VistaGestor {
     }
 
 
-    public void mostrarProyectoDeGestor(ArrayList<Proyecto> proyecto){
+    public void mostrarProyectoDeGestor(ArrayList<Proyecto> proyecto, String nombreUsuario){
         if(proyecto.isEmpty()){
             System.out.println("No hay proyectos creados");
         }
         for (int i = 0; i <proyecto.size() ; i++) {
-            System.out.println(proyecto.get(i));
+            if (proyecto.get(i).getNombreCreador().equals(nombreUsuario)) System.out.println(proyecto.get(i));
         }
     }
     public void mensajeDeOrdenacionPorFinanciacion(){

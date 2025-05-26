@@ -22,33 +22,31 @@ public class ControladorGestor  implements Serializable {
     }
 
     public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin, String id,String nombreDeUsuario){
-        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,fechaDeFin,id);
-        gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).crearProyecto(nuevoProyecto);
+        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,fechaDeFin,nombreDeUsuario,id);
         vistaGestor.mensajeProyectoCreado();
         gestorDeProyecto.añadirProyecto(nuevoProyecto);
     }
 
-    public void eliminarProyecto(String id,String nombreDeUsuario){
-        gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).eliminarProyecto(id);
+    public void eliminarProyecto(String id){
         gestorDeProyecto.eliminarProyecto(id);
         vistaGestor.mensajeProyectoEliminado();
     }
 
     public void ordenarPorFecha(String nombreDeUsuario){
-     gestorDeProyecto.ordenarArrayPorFecha( gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
+     gestorDeProyecto.ordenarArrayPorFecha();
      vistaGestor.mensajeProyectosOrdenadosPorFecha();
     }
 
     public void verProyectos(String nombreDeUsuario){
         vistaGestor.mensajeMostrarProyectos(gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getNombre());
-        vistaGestor.mostrarProyectoDeGestor(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectos());
+        vistaGestor.mostrarProyectoDeGestor(gestorDeProyecto.verArrayDeProyectos(),nombreDeUsuario);
     }
     public void enviarCorreoConExcel(String idProyecto, String nombreInversor){
         FuncionesDeCorreo correo = new FuncionesDeCorreo();
         correo.exportarInversionesExcel(gestorDeProyecto.buscarProyecto(idProyecto).getInvercionesRealizadas(), nombreInversor);
     }
     public void ordenarProyectoPorImporteRealizado(String nombreDeUsuario){
-       gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeUsuarios.verMetodosDeGestor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verArrayDeProyectosDeGestor());
+       gestorDeProyecto.ordenarPorImporteFinanciado(gestorDeProyecto.verArrayDeProyectos());
         vistaGestor.mensajeDeOrdenacionPorFinanciacion();
     }
     public void mostrarInversionistasOrdenadoPorNombre(String idProyecto){
