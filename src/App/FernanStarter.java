@@ -55,6 +55,7 @@ public class FernanStarter implements Serializable {
         String nombreDeUsuarioAdministrador = "";
         String nombreDeUsuarioGestor = "";
         String nombreDeUsuarioInversor = "";
+        String idProyectoCambio = "";
 
         int opcionesDeMenu = 0;
         int opcionesDeAdmin = 0;
@@ -86,7 +87,6 @@ public class FernanStarter implements Serializable {
         dao.open();
         gestorDeUsuarios.setGestorDeUsuarios(daoUsuarioSQL.obtenerTodos(dao));
         gestorDeProyecto.setGestorProyecto(daoProyectoSQL.obtenerProyectos(dao));
-        daoProyectoSQL.modificarProyecto(p5,dao);
 
         while (opcionesDeMenu != 7) {
 
@@ -232,14 +232,14 @@ public class FernanStarter implements Serializable {
                                             System.out.println("Escribe el día de fin:");
                                             int dayFin = S.nextInt();
                                             LocalDate fechaDeFin = LocalDate.of(yearFin, monthFin, dayFin);
-                                            controladorGestor.crearProyecto(nombre, descripcion, Categoria.valueOf(categoria), cantidadNecesaria, cantidadFinanciada, fechaInicio, fechaDeFin, id, nombreDeUsuarioGestor);
+                                            controladorGestor.crearProyecto(nombre, descripcion, Categoria.valueOf(categoria), cantidadNecesaria, cantidadFinanciada, fechaInicio, fechaDeFin, id, nombreDeUsuarioGestor, dao);
                                             logs.RegistroDeCreacionDeProyecto(nombreDeUsuarioGestor, gestorDeProyecto.buscarProyecto(id).toString());
                                             persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                             break;
                                         case 3:
                                             System.out.println("Escribe id de proyecto que quieres eliminar");
                                             String proyectoId = S.next();
-                                            controladorGestor.eliminarProyecto(proyectoId);
+                                            controladorGestor.eliminarProyecto(proyectoId, dao);
                                             logs.RegistroDeElimicacionDeProyecto(proyectoId, nombreDeUsuarioGestor);
                                             break;
                                         case 4:
@@ -253,7 +253,7 @@ public class FernanStarter implements Serializable {
                                             System.out.println("Escribe tu contraseña");
                                             String nuevaContraseña = S.next();
                                             controladorGestor.cambiarUsuarioGestor(nombreDeUsuarioGestor, nuevoNombreDeUsuario);
-                                            controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioGestor, nuevaContraseña);
+                                            controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioGestor, nuevaContraseña, nuevoNombreDeUsuario, dao);
                                             break;
                                         case 6:
                                             System.out.println("Escribe el id del proyecto que buscas");
@@ -302,50 +302,51 @@ public class FernanStarter implements Serializable {
                                             switch (opciones) {
                                                 case 1:
                                                     System.out.println("Escibe el id del proyecto al que quieres cambiar su nombre");
-                                                    String idProyectoCambioDeNombre = S.next();
+                                                    idProyectoCambio = S.next();
                                                     System.out.println("Escribe el nuevo nombre de proyecto");
                                                     String nuevoNombre = S.next();
-                                                    controladorGestor.modificarnNombreDeProyecto(idProyectoCambioDeNombre, nuevoNombre);
-                                                    logs.registroDeCambioDeNombre(nombreDeUsuarioGestor, idProyectoCambioDeNombre, nuevoNombre);
+                                                    controladorGestor.modificarnNombreDeProyecto(idProyectoCambio, nuevoNombre);
+                                                    logs.registroDeCambioDeNombre(nombreDeUsuarioGestor, idProyectoCambio, nuevoNombre);
                                                     persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                                     break;
                                                 case 2:
                                                     System.out.println("Escibe el id del proyecto al que quieres cambiar su Descripcion");
-                                                    String idProyectoCambioDeDescripcion = S.next();
+                                                    idProyectoCambio = S.next();
                                                     System.out.println("Escribe el nuevo nombre de proyecto");
                                                     String nuevaDescripcion = S.next();
-                                                    controladorGestor.modificarDescripcionDeProyecto(String.valueOf(nuevaDescripcion), idProyectoCambioDeDescripcion);
-                                                    logs.registroDeCambioDeDescripcion(nombreDeUsuarioGestor, idProyectoCambioDeDescripcion, nuevaDescripcion);
+                                                    controladorGestor.modificarDescripcionDeProyecto(nuevaDescripcion, idProyectoCambio);
+                                                    logs.registroDeCambioDeDescripcion(nombreDeUsuarioGestor, idProyectoCambio, nuevaDescripcion);
                                                     persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                                     break;
                                                 case 3:
                                                     System.out.println("Escibe el id del proyecto al que quieres cambiar su cantegoria");
-                                                    String idProyectoCambioDeCategoria = S.next();
+                                                    idProyectoCambio = S.next();
                                                     System.out.println("Escribe la nueva categoria");
                                                     Categoria nuevaCategoria = Categoria.valueOf(S.next());
-                                                    controladorGestor.modificarCategoria(nuevaCategoria, idProyectoCambioDeCategoria);
-                                                    logs.RegistroCambioDeCategoria(nombreDeUsuarioGestor, idProyectoCambioDeCategoria, String.valueOf(nuevaCategoria));
+                                                    controladorGestor.modificarCategoria(nuevaCategoria, idProyectoCambio);
+                                                    logs.RegistroCambioDeCategoria(nombreDeUsuarioGestor, idProyectoCambio, String.valueOf(nuevaCategoria));
                                                     persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                                     break;
                                                 case 4:
                                                     System.out.println("Escibe el id del proyecto al que quieres cambiar su cantidad necesaria para ser financiado ");
-                                                    String idProyectoCambioDeCantidad = S.next();
+                                                    idProyectoCambio = S.next();
                                                     System.out.println("Escribe la nueva camtidad necesaria");
                                                     int nuevaCantidadNecesaria = Integer.parseInt(S.next());
-                                                    controladorGestor.modificarCantidadFinanciada(Integer.parseInt(nombreDeUsuarioGestor), idProyectoCambioDeCantidad);
-                                                    logs.RegistroCambioDeCategoria(nombreDeUsuarioGestor, idProyectoCambioDeCantidad, String.valueOf(nuevaCantidadNecesaria));
+                                                    controladorGestor.modificarCantidadFinanciada(nuevaCantidadNecesaria, idProyectoCambio);
+                                                    logs.RegistroCambioDeCategoria(nombreDeUsuarioGestor, idProyectoCambio, String.valueOf(nuevaCantidadNecesaria));
                                                     persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                                     break;
                                                 case 5:
                                                     System.out.println("Escibe el id del proyecto al que quieres cambiar su cantidad necesaria para ser financiado ");
-                                                    String idProyectoCambioFecha = S.next();
+                                                    idProyectoCambio = S.next();
                                                     System.out.println("Escribe la nueva camtidad necesaria");
                                                     LocalDate nuevaFecha = LocalDate.ofEpochDay(Long.parseLong(S.next()));
-                                                    controladorGestor.modificarFechaDeApertura(nuevaFecha, idProyectoCambioFecha);
-                                                    logs.RegistroCambiarFecha(nombreDeUsuarioGestor, idProyectoCambioFecha, String.valueOf(nuevaFecha));
+                                                    controladorGestor.modificarFechaDeApertura(nuevaFecha, idProyectoCambio);
+                                                    logs.RegistroCambiarFecha(nombreDeUsuarioGestor, idProyectoCambio, String.valueOf(nuevaFecha));
                                                     persistencia.guardarProyectos(gestorDeProyecto.verArrayDeProyectos());
                                                     break;
                                             }
+                                            daoProyectoSQL.modificarProyecto(gestorDeProyecto.buscarProyecto(idProyectoCambio), dao);
                                     }
                                 }
                             persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
@@ -407,7 +408,7 @@ public class FernanStarter implements Serializable {
                                                 System.out.println("Escribe tu contraseña");
                                                 String nuevaContraseña = S.next();
                                                 controladorGestor.cambiarUsuarioGestor(nombreDeUsuarioInversor, nuevoNombreDeUsuario);
-                                                controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioInversor, nuevaContraseña);
+                                                controladorGestor.cambiarContraseñaDeUsuario(nombreDeUsuarioInversor, nuevaContraseña, nuevoNombreDeUsuario, dao);
                                                 break;
                                             case 7:
                                                 controladorInversor.mostrarAmigosDelIversor(nombreDeUsuarioInversor, dao);
@@ -456,7 +457,7 @@ public class FernanStarter implements Serializable {
                                             System.out.print("Ingrese su correo electrónico: ");
                                             String correoGestor = S.next();
                                             Gestor gestor = new Gestor(nombreGestor, correoGestor, contraseñaGestor);
-                                            controladorGestor.añadirGestorAGestorDeUsuarios(gestor);
+                                            controladorGestor.añadirGestorAGestorDeUsuarios(gestor, dao);
                                             persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                                             break;
                                         case 2:
@@ -467,7 +468,7 @@ public class FernanStarter implements Serializable {
                                             System.out.print("Ingrese su correo electrónico: ");
                                             String correoInversor = S.next();
                                             Inversor Inversor = new Inversor(nombreInversor, correoInversor, contraseñaInversor);
-                                            controladorInversor.añadirInversorAGestorDeUsuarios(Inversor);
+                                            controladorInversor.añadirInversorAGestorDeUsuarios(Inversor, dao);
                                             persistencia.guardarObjetos(gestorDeUsuarios.getGestorDeUsuarios());
                                             break;
                                     }

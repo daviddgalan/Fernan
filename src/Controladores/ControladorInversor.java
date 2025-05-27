@@ -1,8 +1,5 @@
 package Controladores;
-import DAO.DAOAmigoSQL;
-import DAO.DAOInversion;
-import DAO.DAOInversorSQL;
-import DAO.DAOManager;
+import DAO.*;
 import FuncionesDeCorreo.FuncionesDeCorreo;
 import Inversión.Inversion;
 import Modelos.Amigo;
@@ -119,11 +116,14 @@ public class ControladorInversor implements Serializable {
         return gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).verUltimaInversion();
     }
 
-    public void añadirInversorAGestorDeUsuarios(Usuario Gestor){
+    public void añadirInversorAGestorDeUsuarios(Usuario Gestor, DAOManager dao){
         gestorDeUsuarios.agregarUsuarios(Gestor);
+        DaoUsuarioSQL daoUsuarioSQL = new DaoUsuarioSQL();
+        daoUsuarioSQL.insertar(Gestor,dao);
     }
     public void cambiarCartera(int cartera,String nombreDeUsuario){
         gestorDeUsuarios.verMetodosDeInversor(gestorDeUsuarios.buscarUsuario(nombreDeUsuario)).setCartera(cartera);
+
     }
 
 }

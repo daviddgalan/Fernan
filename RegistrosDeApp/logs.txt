@@ -369,3 +369,62 @@
  inicio de sesion realizado por Andres el cuel es Administrador
 
  la fecha inicio de sesion fue 2025-05-26T15:47:31.660310200
+ inicio de sesion realizado por julioCesar el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T12:06:09.025752700
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T12:47:39.299715500
+ inicio de sesion realizado por Andres el cuel es Administrador
+
+ la fecha inicio de sesion fue 2025-05-27T12:49:40.833281200
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T12:57:09.487531700
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:01:39.344444
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:11:08.233507200
+ cambio de nombre realizado por Sergi
+
+ el id del proyecto que fue modificado es P002 el nombre por el cual fue cambiado es jk
+
+ la fecha de la modificacion es 2025-05-27T13:11:35.593869700
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:14:09.223374400
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:14:51.001868300
+ cambio de nombre realizado por Sergi
+
+ el id del proyecto que fue modificado es P002 el nombre por el cual fue cambiado es AndresFEO
+
+ la fecha de la modificacion es 2025-05-27T13:15:08.828127500
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:19:12.021142400
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:24:52.236242400
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:30:10.796456
+ inicio de sesion realizado por Sergi el cuel es Gestor
+
+ la fecha inicio de sesion fue 2025-05-27T13:33:21.595386
+ Se ha creado un proyecto el cual es El nombre del proyecto es holaquetal
+ su descripción es adiosporfavor
+ Pertenece a la categoría Arte
+ Se necesita una cantidad de 100.0
+ hasta ahora se ha financiado 12
+ La fecha de apertura fue 1000-12-12
+ la fecha de finalización es 1000-12-12
+ Las recompensas ofrecidas son de [] el cual fue creador por Sergi
+
+ la fecha en la que se creo el proyecto fue 2025-05-27T13:33:57.277185700
+ inicio de sesion realizado por Marcos el cuel es Inversor
+
+ la fecha inicio de sesion fue 2025-05-27T13:34:34.549879500

@@ -1,5 +1,8 @@
 package Controladores;
 
+import DAO.DAOManager;
+import DAO.DaoProyectoSQL;
+import DAO.DaoUsuarioSQL;
 import FuncionesDeCorreo.FuncionesDeCorreo;
 import Modelos.*;
 import MoldelosGestores.GestorDeProyecto;
@@ -21,13 +24,17 @@ public class ControladorGestor  implements Serializable {
         this.gestorDeProyecto = gestorDeProyecto;
     }
 
-    public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin, String id,String nombreDeUsuario){
-        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,fechaDeFin,nombreDeUsuario,id);
-        vistaGestor.mensajeProyectoCreado();
+    public void crearProyecto(String nombre, String descripcion, Categoria categoria, int cantidadNecesaria, int cantidadFinanciada, LocalDate fechaDeApertura, LocalDate fechaDeFin, String id,String nombreDeUsuario, DAOManager dao){
+        Proyecto nuevoProyecto=new Proyecto(nombre,descripcion,categoria,cantidadNecesaria,cantidadFinanciada,fechaDeApertura,fechaDeFin,id,nombreDeUsuario);
+        DaoProyectoSQL daoProyectoSQL = new DaoProyectoSQL();
         gestorDeProyecto.añadirProyecto(nuevoProyecto);
+        daoProyectoSQL.insertarProyecto(nuevoProyecto,dao);
+        vistaGestor.mensajeProyectoCreado();
     }
 
-    public void eliminarProyecto(String id){
+    public void eliminarProyecto(String id, DAOManager dao){
+        DaoProyectoSQL daoProyectoSQL = new DaoProyectoSQL();
+        daoProyectoSQL.EliminarProyecto(id,dao);
         gestorDeProyecto.eliminarProyecto(id);
         vistaGestor.mensajeProyectoEliminado();
     }
@@ -117,11 +124,17 @@ public class ControladorGestor  implements Serializable {
 
     }
 
-    public void cambiarContraseñaDeUsuario(String nombreDeUsuario,String nuevaContraseña){
-        gestorDeUsuarios.buscarUsuario(nombreDeUsuario).cambioDeContraseña(nuevaContraseña);
+    public void cambiarContraseñaDeUsuario(String nombreDeUsuario,String nuevaContraseña, String nuevoNombreDeUsuario, DAOManager dao){
+        //Gestor gestor = new Gestor(nuevoNombreDeUsuario, gestorDeUsuarios.buscarUsuario(nombreDeUsuario).getCorreo(), nuevaContraseña);
+        //DaoUsuarioSQL daoUsuarioSQL = new DaoUsuarioSQL();
+        //gestorDeUsuarios.cambiarUsuarioHashMap(nombreDeUsuario,gestor);
+        gestorDeUsuarios.buscarUsuario(nuevoNombreDeUsuario).setContraseña(nuevaContraseña);
+        //daoUsuarioSQL.actualizarUsuario(nombreDeUsuario, gestor, dao);
     }
-    public void añadirGestorAGestorDeUsuarios(Usuario Gestor){
-        gestorDeUsuarios.agregarUsuarios(Gestor);
+    public void añadirGestorAGestorDeUsuarios(Usuario gestor, DAOManager dao){
+        gestorDeUsuarios.agregarUsuarios(gestor);
+        DaoUsuarioSQL daoUsuarioSQL = new DaoUsuarioSQL();
+        daoUsuarioSQL.insertar(gestor,dao);
     }
 
 }
